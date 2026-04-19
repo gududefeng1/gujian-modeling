@@ -771,7 +771,7 @@ if 'gallery_tab' not in st.session_state:
     st.session_state.gallery_tab = "殿堂建筑"
 
 # ========== 本地图片路径配置 ==========
-IMAGE_FOLDER = r"C:\Users\32404\OneDrive\桌面\计算机设计"
+IMAGE_FOLDER = "计算机设计"
 
 # 模块一图片路径映射
 ARCHITECTURE_IMAGES = {
