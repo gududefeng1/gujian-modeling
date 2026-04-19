@@ -28,6 +28,20 @@ from PIL import Image
 import warnings
 warnings.filterwarnings('ignore')
 
+def check_password():
+    if "password_correct" not in st.session_state:
+        st.session_state.password_correct = False
+    if not st.session_state.password_correct:
+        password = st.text_input("请输入访问密码", type="password")
+        if password == "1q_2w_3e_4r_888":
+            st.session_state.password_correct = True
+        else:
+            st.error("密码错误")
+            return False
+    return True
+if check_password():
+    st.title("中国古代建筑数学建模交互式平台")
+    
 # 设置matplotlib中文字体
 plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'DejaVu Sans']
 plt.rcParams['axes.unicode_minus'] = False
