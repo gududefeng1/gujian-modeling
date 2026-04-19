@@ -28,34 +28,17 @@ from PIL import Image
 import warnings
 warnings.filterwarnings('ignore')
 
-def check_password():
-    if "password_correct" not in st.session_state:
-        st.session_state.password_correct = False
-
-    if not st.session_state.password_correct:
-        st.text_input("请输入访问密码", type="password", key="pwd_input")
-        
-        if st.session_state.get("pwd_input") == "1q_2w_3e_4r_":
-            st.session_state.password_correct = True
-            st.rerun()
-        elif st.session_state.get("pwd_input"):
-            st.error("密码错误！")
-        
-        return False
-    return True
-if check_password():
-    # 设置matplotlib中文字体
+# 设置matplotlib中文字体
 plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'DejaVu Sans']
 plt.rcParams['axes.unicode_minus'] = False
 
 # ========== 页面配置 ==========
 st.set_page_config(
-    layout="wide",
-    page_title="中国古代建筑数学建模交互式平台",
-    initial_sidebar_state="collapsed",
-    page_icon="🏯"
+layout="wide",
+page_title="中国古代建筑数学建模交互式平台",
+initial_sidebar_state="collapsed",
+page_icon="🏯"
 )
-
 # ========== 自定义CSS：极致视觉体验 ==========
 st.markdown("""
 <style>
@@ -4965,7 +4948,5 @@ elif st.session_state.page == 'module4':
         st.markdown('</div>', unsafe_allow_html=True)
         
         st.markdown('</div>', unsafe_allow_html=True)
- st.title("中国古代建筑数学建模交互式平台")
 
-else:
-    st.stop()  
+    
